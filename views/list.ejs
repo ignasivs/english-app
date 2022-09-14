@@ -11,10 +11,10 @@
 
 <form method="POST">
     <h2> List words </h2>
-    <% for( var i = 0; i < task.length; i++){ %>
- <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
+    <% for( var i = 0; i < words.length; i++){ %>
+ <li><input type="checkbox" name="values" value="<%= words[i].name %>,<%= words[i].translation %>" /> <%= words[i].name %> - <%= words[i].translation %></li>
  <% } %>
-<button formaction="/removetask" type="submit"> Remove </button>
+<button formaction="/removeword" type="submit"> Remove </button>
 </form>
 </div>
 </body>

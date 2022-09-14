@@ -7,19 +7,19 @@
 <body>
   <div class="container">
 <h2> A Simple English App </h2>
-<form action ="/addtask" method="POST">
+<form action ="/addword" method="POST">
        <input type="text" name="newName" placeholder="add new name">        
        <input type="text" name="newTranslation" placeholder="add new translation">
-       <button> Add Task </button>
+       <button> Add Word </button>
 </form>
 <h2> View all words </h2>
 <p><a href="/list">List</a></p>
 <h2> Learn word </h2>
     <% var showTranslation = false; %>
-    <% var randomNum = Math.floor((Math.random() * task.length)); %>
-    <li><%= task[randomNum] %> </li>
+    <% var randomNum = Math.floor((Math.random() * words.length)); %>
+    <li><%= words[randomNum].name %> </li>
     <li style="color: white;">
-        <%= randomNum%>
+        <%= words[randomNum].translation%>
     </li>
 </div>
 </body>
