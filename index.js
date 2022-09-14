@@ -53,9 +53,9 @@ app.get('/list', function (req, res) {
     //await loadWords();
     res.redirect("/list");
 });
-//the server is listening on port 3000 for connections
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+//the server is listening on port process.env.PORT for connections
+app.listen(process.env.PORT, function () {
+  console.log('Example app listening on port ', process.env.PORT);
 });
 
 function saveNewWord(name, translation) {
