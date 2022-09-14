@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title> ToDo App </title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100"     rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+  </head>
+<body>
+  <div class="container">
+<h2> A Simple English App </h2>
+<p><a href="/">Home</a></p>
+
+<form method="POST">
+    <h2> List words </h2>
+    <% for( var i = 0; i < task.length; i++){ %>
+ <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
+ <% } %>
+<button formaction="/removetask" type="submit"> Remove </button>
+</form>
+</div>
+</body>
+</html>
