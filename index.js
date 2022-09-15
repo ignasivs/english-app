@@ -19,13 +19,13 @@ var connection = mysql.createPool({
 });
 
 // Attempt to catch disconnects 
-dbconnection.on('connection', function (connection) {
+connection.on('connection', function (conn) {
   console.log('DB Connection established');
 
-  connection.on('error', function (err) {
+  conn.on('error', function (err) {
     console.error(new Date(), 'MySQL error', err.code);
   });
-  connection.on('close', function (err) {
+  conn.on('close', function (err) {
     console.error(new Date(), 'MySQL close', err);
   });
 
