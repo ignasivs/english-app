@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 
 let words = [];
 
-var connection = mysql.createConnection({
+var connection = mysql.createPool({
     host     : 'remotemysql.com',
     database : 'AUr9u7g0jl',
     user     : 'AUr9u7g0jl',
