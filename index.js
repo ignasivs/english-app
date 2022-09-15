@@ -18,13 +18,17 @@ var connection = mysql.createPool({
     password : '5Dytz7Tu3i',
 });
 
-connection.connect(function(err) {
-    if (err) {
-        console.error('Error connecting: ' + err.stack);
-        return;
-    }
+// Attempt to catch disconnects 
+dbconnection.on('connection', function (connection) {
+  console.log('DB Connection established');
 
-    console.log('Connected');
+  connection.on('error', function (err) {
+    console.error(new Date(), 'MySQL error', err.code);
+  });
+  connection.on('close', function (err) {
+    console.error(new Date(), 'MySQL close', err);
+  });
+
 });
 
 loadWords();
