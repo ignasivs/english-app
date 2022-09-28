@@ -14,7 +14,7 @@
     <% for( var i = 0; i < words.length; i++){ %>
  <li><input type="checkbox" name="values" value="<%= words[i].name %>,<%= words[i].translation %>" /> <%= words[i].name %> - <%= words[i].translation %></li>
  <% } %>
-<button formaction="/removeword" type="submit"> Remove </button>
+<button class="button-add" formaction="/removeword" type="submit"> Remove </button>
 </form>
 </div>
 </body>
